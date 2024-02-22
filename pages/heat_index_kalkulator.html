@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator Heat Index</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body class="kalkulatorHeatIndex">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-transparent">
+      <div class="container px-5">
+        <div class="row">
+          <a class="navbar-brand" href="../index.html" style="color: white">
+            <img
+              src="../imgs/agricultural-logo.png"
+              alt="Source: https://lovepik.com/image-401740052/agricultural-logo.html"
+              width="30"
+              height="30"
+              class="d-inline-block align-top"
+            />
+            Nama Aplikasi
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Container -->
+    <div class="container mt-5">
+      <div class="row mb-5">
+        <!-- Container kiri -->
+        <div class="col-md-4 mb-4">
+          <h2 class="mb-4">Kakulator Heat Index</h2>
+
+          <div class="mb-3">
+            <label for="temperatureInput" class="form-label"
+              >Suhu Udara (°C)</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="temperatureInput"
+              placeholder="Masukkan suhu udara"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="humidityInput" class="form-label"
+              >Kelembaban Relatif (%)</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="humidityInput"
+              placeholder="Masukkan kelembaban relatif"
+            />
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            onclick="calculateHeatIndex()"
+          >
+            Hitung Heat Index
+          </button>
+        </div>
+
+        <!-- Container kanan -->
+        <div class="col-md-8 mb-4">
+          <div class="container">
+            <div
+              class="card"
+              id="hasilIdentifikasi"
+              style="display: none; border-radius: 10px"
+            >
+              <div class="card-body">
+                <div class="mt-4">
+                  <h4 class="mb-4">Hasil perhitungan heat index:</h4>
+                  <table class="table" id="table">
+                    <thead>
+                      <tr>
+                        <th>Kategori</th>
+                        <th>Rekomendasi Kerja/Istirahat</th>
+                        <th>Kebutuhan Air Mineral</th>
+                        <th>Heat Index Value</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td id="resultCategory"></td>
+                        <td id="resultRecommendation"></td>
+                        <td id="resultWaterRequirement"></td>
+                        <td id="resultHeatIndex"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <a href="../index.html" class="btn btn-primary shadow" role="button"
+            >Kembali ke home</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="../script/heat_index_kalkulator.js"></script>
+    <script src="../script/script.js"></script>
+  </body>
+</html>
